@@ -43,6 +43,7 @@ Polix is a full-stack agentic AI system for automated compliance auditing, combi
 
 - **[Full Documentation](./docs/readme.md)** - Complete setup and usage guide
 - **[Architecture](./docs/architecture.md)** - System architecture and design
+- **[Models](./docs/models.md)** - AI models used in Polix
 - **[Using uv](./docs/uv-setup.md)** - Guide for using uv package manager
 
 ## Features
