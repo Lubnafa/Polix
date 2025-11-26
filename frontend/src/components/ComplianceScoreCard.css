@@ -1,0 +1,123 @@
+.compliance-score-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.score-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.score-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.score-label {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.score-label-compliant {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.score-label-partial {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.score-label-noncompliant {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.score-display {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.score-circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.score-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.score-background {
+  fill: none;
+  stroke: #e2e8f0;
+  stroke-width: 10;
+}
+
+.score-progress {
+  fill: none;
+  stroke: var(--color);
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.5s ease;
+}
+
+.score-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.score-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.score-max {
+  font-size: 1.25rem;
+  color: #64748b;
+}
+
+.score-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.score-bar {
+  flex: 1;
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.score-percentage {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+  margin: 0;
+  min-width: 50px;
+}
+

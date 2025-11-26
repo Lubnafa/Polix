@@ -1,0 +1,155 @@
+.agent-timeline {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-header {
+  margin-bottom: 2rem;
+}
+
+.timeline-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.25rem 0;
+}
+
+.timeline-header p {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.timeline-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #64748b;
+}
+
+.timeline-empty p {
+  margin: 0.5rem 0;
+}
+
+.empty-subtitle {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.timeline-steps {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-step {
+  position: relative;
+  padding-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.timeline-step:last-child {
+  padding-bottom: 0;
+}
+
+.step-connector {
+  position: absolute;
+  left: 23px;
+  top: 48px;
+  width: 2px;
+  height: calc(100% - 16px);
+  background-color: #e2e8f0;
+}
+
+.timeline-step:last-child .step-connector {
+  display: none;
+}
+
+.step-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  border: 2px solid #e2e8f0;
+  background-color: #ffffff;
+}
+
+.step-content {
+  flex: 1;
+  padding-top: 0.25rem;
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.step-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.step-status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background-color: currentColor;
+  opacity: 0.1;
+}
+
+.step-timestamp {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0 0 0.75rem 0;
+}
+
+.step-result {
+  margin-top: 0.75rem;
+}
+
+.step-toggle {
+  padding: 0.5rem 1rem;
+  background-color: #f1f5f9;
+  color: #3b82f6;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.step-toggle:hover {
+  background-color: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.step-details {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  overflow-x: auto;
+}
+
+.step-details pre {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #1e293b;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+

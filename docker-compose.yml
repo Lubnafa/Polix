@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: polix-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - VECTOR_STORE_PATH=/app/data/vectorstore
+      - VECTOR_STORE_TYPE=chromadb
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-text-embedding-3-small}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4-turbo-preview}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - DEBUG=${DEBUG:-false}
+      - MCP_ENABLED=${MCP_ENABLED:-true}
+      - GITHUB_TOKEN=${GITHUB_TOKEN:-}
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    depends_on:
+      - chroma
+    restart: unless-stopped
+    networks:
+      - polix-network
+
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: polix-chroma
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./data/chroma:/chroma/chroma
+    environment:
+      - IS_PERSISTENT=TRUE
+      - PERSIST_DIRECTORY=/chroma/chroma
+    restart: unless-stopped
+    networks:
+      - polix-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: polix-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - polix-network
+
+networks:
+  polix-network:
+    driver: bridge
+
+volumes:
+  chroma-data:
+  vectorstore-data:
+

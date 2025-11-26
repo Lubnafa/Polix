@@ -1,0 +1,7 @@
+# uv configuration file
+# See https://github.com/astral-sh/uv/blob/main/docs/configuration.md
+
+# Enable faster installations
+[resolver]
+# Use the default resolver settings
+
